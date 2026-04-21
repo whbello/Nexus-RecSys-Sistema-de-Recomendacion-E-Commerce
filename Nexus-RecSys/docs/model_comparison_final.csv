@@ -1,0 +1,10 @@
+﻿notebook,model,ndcg10_test,delta_pct
+NB13-C,RP3+TD (baseline),0.02859,0.0
+NB14-E1,RP3+TD+IPS (gamma=0.1),0.028355,-0.82
+NB14-E4,Ensemble Spearman (NB14),0.04069,42.32
+NB15v2,Ensemble Optimizado (NB15v2),0.043103,50.76
+NB16-A,Champion warm>=5,0.07930,177.4
+NB16-A,Champion warm>=10,0.11127,289.2
+NB16-B,Session Markov (standalone),0.01198,-58.1
+NB16-C,Stage2 LGB (test leakage),0.003566,-87.5
+NB16-D,Deep Ensemble Optuna (test),0.016739,-41.4

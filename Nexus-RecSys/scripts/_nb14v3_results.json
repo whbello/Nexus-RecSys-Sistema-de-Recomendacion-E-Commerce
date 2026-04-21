@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-03-21T01:13:33",
+  "baseline": {
+    "model": "RP3+TD (NB13-C)",
+    "ndcg10_test": 0.02859
+  },
+  "E1_IPS": {
+    "ndcg10_test": 0.028355,
+    "ndcg10_val": 0.01809,
+    "best_gamma": 0.1,
+    "delta_pct": -0.8219657222805145,
+    "note": "Resultado de ejecucion v2 (grid 6 gammas)"
+  },
+  "E2_MB": {
+    "ndcg10_test": 0.0189,
+    "ndcg10_val": 0.01118,
+    "w_view": 2.669,
+    "w_cart": 1.079,
+    "w_trans": 3.869,
+    "delta_pct": -33.892969569779645,
+    "note": "Resultado de ejecucion v2 (Optuna 40 trials)"
+  },
+  "E3_LGCN": {
+    "ndcg10_test": null,
+    "converged": false,
+    "epoch1_ndcg_val": 0.01018,
+    "epoch1_time_s": 835.7,
+    "projected_50ep_hours": 11.6,
+    "note": "No evaluado. Epoch 1 tomo 836s en CPU. 50 epochs = ~11.6h. Requiere GPU."
+  },
+  "E4_Ensemble": {
+    "ndcg10_test": 0.04069100457597265,
+    "ndcg10_val": 0.02004601033802686,
+    "delta_pct": 42.32600411323067,
+    "trio_selected": [
+      "rp3_td",
+      "ease_500",
+      "rp3_mb_td"
+    ],
+    "trio_corr_avg": 0.469,
+    "weights": {
+      "rp3_td": 0.0925483498182641,
+      "ease_500": 0.14799497653516758,
+      "rp3_mb_td": 0.7594566736465683
+    },
+    "spearman_matrix": {
+      "rp3_td": {
+        "rp3_td": 1.0,
+        "ease_500": 0.216,
+        "rp3_td_ips": 1.0,
+        "rp3_mb_td": 0.988
+      },
+      "ease_500": {
+        "rp3_td": 0.216,
+        "ease_500": 1.0,
+        "rp3_td_ips": 0.217,
+        "rp3_mb_td": 0.204
+      },
+      "rp3_td_ips": {
+        "rp3_td": 1.0,
+        "ease_500": 0.217,
+        "rp3_td_ips": 1.0,
+        "rp3_mb_td": 0.988
+      },
+      "rp3_mb_td": {
+        "rp3_td": 0.988,
+        "ease_500": 0.204,
+        "rp3_td_ips": 0.988,
+        "rp3_mb_td": 1.0
+      }
+    }
+  },
+  "target_0030_reached": true
+}

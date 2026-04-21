@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-03-21T14:57:07",
+  "method": "greedy_forward_selection + optuna",
+  "baseline_nb12": {
+    "model": "RP3+TD (NB13-C)",
+    "ndcg10_test": 0.02859
+  },
+  "baseline_nb14": {
+    "model": "Ensemble Spearman (NB14)",
+    "ndcg10_test": 0.04069
+  },
+  "individual_model_ndcg_val": {
+    "rp3_td": 0.0178599409195605,
+    "rp3_td_ips": 0.018097026896141608,
+    "rp3_mb_td": 0.021886871396634044,
+    "ease_50": 0.014312885850487454,
+    "ease_200": 0.014156343931223723,
+    "ease_500": 0.014252875018987409,
+    "ease_1000": 0.013748878614686925,
+    "ease_3000": 0.010257219942347118,
+    "ials": 0.012018185282673531
+  },
+  "nb14_trio_val": 0.02074181576936293,
+  "greedy_selection": {
+    "selected_models": [
+      "rp3_td",
+      "ease_500",
+      "rp3_mb_td"
+    ],
+    "final_val_ndcg": 0.02074181576936293
+  },
+  "NB15v2_result": {
+    "ndcg10_test": 0.043102521379874435,
+    "ndcg10_val": 0.02170604506523838,
+    "delta_pct_vs_nb14": 5.929027721490387,
+    "delta_pct_vs_nb12": 50.7608302898721,
+    "selected_models": [
+      "rp3_td",
+      "ease_500",
+      "rp3_mb_td"
+    ],
+    "weights": {
+      "rp3_td": 0.02308434334537878,
+      "ease_500": 0.0213159015663354,
+      "rp3_mb_td": 0.9555997550882859
+    }
+  },
+  "champion": {
+    "model": "NB15v2",
+    "ndcg10": 0.043102521379874435,
+    "description": "Mega-Ensemble (rp3_td+ease_500+rp3_mb_td)"
+  }
+}

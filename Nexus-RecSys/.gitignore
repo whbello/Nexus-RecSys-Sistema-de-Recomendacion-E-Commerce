@@ -1,0 +1,87 @@
+# ── Entornos virtuales ─────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Variables de entorno (credenciales sensibles — NUNCA versionar) ────────
+.env
+.env.local
+.env.*.local
+
+# ── Datos pesados (no versionar — descargar desde Kaggle) ──────────────────
+data/raw/*
+data/interim/*
+data/processed/*
+# Conservar la carpeta vacía para que el pipeline no falle al clonar
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# ── Encoders serializados (generados por NB-06, no son input del repo) ─────
+encoders/*
+!encoders/.gitkeep
+
+# ── Jupyter ────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+# Notebooks ejecutados (con outputs embebidos — se regeneran con nbconvert)
+notebooks/*_output.ipynb
+
+# ── Python ─────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# ── Docs generados (producidos al ejecutar los notebooks) ──────────────────
+docs/*.csv
+docs/*.png
+# model_justification.md, ARTIFACTS.md y docs técnicos SÍ se versionan
+!docs/model_justification.md
+!docs/ARTIFACTS.md
+# Tabla comparativa final (curada manualmente, no generada) SÍ se versiona
+!docs/model_comparison_final.csv
+# Documentación técnica versionada
+!docs/API_DOCS.md
+!docs/REPRODUCIBILITY.md
+!docs/TRADE_OFFS.md
+!docs/validation_plan.md
+# Documentos personales/internos — NO incluir en el repo público
+docs/EXPLICACION_ORAL.md
+docs/DEMO_GUIDE.md
+
+# ── Scripts de depuración temporal ─────────────────────────────────────────
+scripts/inspect_nb.py
+scripts/_nb*.py
+scripts/__pycache__/
+# Excepciones: scripts definitivos NB14v3 y NB15v2 (documentan resultado final)
+!scripts/_nb14v3_run.py
+!scripts/_nb15v2_ensemble.py
+
+# ── Scripts — artefactos generados pesados ────────────────────────────────
+# Matrices de scores (~2GB total, 18 archivos .npy)
+scripts/_score_cache/
+# Mapping generado (417K items)
+scripts/_cat_mapping.json
+# Modelos y checkpoints binarios serializados
+scripts/*.pkl
+scripts/*.pt
+# Logs de ejecución
+scripts/*_log.txt
+# Resultados intermedios JSON (supersedidos)
+scripts/_nb15_results.json
+scripts/_nb16*.json
+scripts/_nb16d_optuna.db
+# Excepciones: resultados finales champion (pequeños, informativos)
+!scripts/_nb14v3_results.json
+!scripts/_nb15v2_results.json
+
+# ── Notebooks de análisis intermedio (no parte del pipeline oficial) ───────
+notebooks/08_nb16_analysis.ipynb
+
+# ── Sistema operativo ──────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
